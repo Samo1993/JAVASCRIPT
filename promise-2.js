@@ -9,9 +9,9 @@ function fetchUserData() {
 function fetchUserPosts(userId, userName) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            if (userId === true) {
-                resolve(['']);  // qui l'ho lasciato vuoto perché volevo "creare" l'errore di non trovare l'id utente, ma in console mi stampa comunque l'user name e mi segnala "Error! Error: User not found" invece dei post. Se inserisco ['Post 1', 'Post 2', 'Post 3'] è tutto regolare.
-            } else { (userName === true)
+            if (userId === 1) {
+                resolve(['']);  // qui l'ho lasciato vuoto perché volevo "creare" l'errore di non trovare l'id utente (Error(`User not found!`)), ma in console mi stampa comunque l'user name e mi segnala [''] invece dei post (giustamente). Se inserisco ['Post 1', 'Post 2', 'Post 3'] è tutto regolare.
+            } else { (userName === 1)
                 reject(new Error(`User not found!`));
             };
         }, 2000);
