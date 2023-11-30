@@ -20,4 +20,4 @@ function displayResult(error, result) {
 
 performOperation(5, 3, displayResult);
 
-/* non ho ben capito come far risultare l'errore. So che devo aggiungere una funzione, ma non ho capito dove*/
+/* non ho ben capito come far risultare l'errore. So che devo aggiungere una funzione, ma non ho capito dove e penso di aver usato anche la formula sbagliata per l'esercizio*/
