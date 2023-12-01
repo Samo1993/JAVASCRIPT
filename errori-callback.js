@@ -14,7 +14,7 @@ function displayResult(error, result) {
         }
          console.log(`Risultato:`, result);
     } catch (error) {
-        console.error(`Si è verificato un errore:`,  error);
+        console.log(`Si è verificato un errore:`,  error);
     }    
 };
 
