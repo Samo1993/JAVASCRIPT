@@ -16,7 +16,7 @@ function fetchDataFromAPI() {
 fetchDataFromAPI().then(data => {
     console.log(data);
 }).catch(error => {
-    console.error(error);
+    console.log(error);
 })
 
 // non capisco perché 10 volte su 10 in console esce sempre "Data retrieved successfully"
