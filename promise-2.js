@@ -24,5 +24,5 @@ fetchUserData().then(user => {
 }).then(posts => {
     console.log(`User posts:`, posts);
 }).catch(error => {
-    console.error(`Error!`, error);
+    console.log(`Error!`, error);
 })
