@@ -18,7 +18,7 @@ async function lanciaVeicoloSpaziale() {
         console.log(moduloC);
         console.log(`Veicolo spaziale pronto per il lancio!`)
     } catch (error) {
-        console.error(error)
+        console.log(error)
     }
 }
 
