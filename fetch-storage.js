@@ -15,7 +15,7 @@ Uncaught (in promise) SyntaxError: Unexpected token 'p', "parseSets("... is not 
 
 async function fetchData() {
     try {
-        const response = await fetch("https://ringsdb.com/api/public/packs/?jsonp=parseSets");
+        const response = await fetch("https://ringsdb.com/api/public/packs/?jsonp=parseSets");  /* non è lo stesso link dell'esercizio perché anche con quello della domanda mi segna errore */
         const responseJson = await response.json();
         const card = responseJson.data[0];
 
