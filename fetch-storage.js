@@ -1,43 +1,23 @@
-/* fetch("https://ringsdb.com/api/public/packs/?jsonp=parseSets")
-.then(response => {
-    return response.json();
-})
-.then(data => {
-    console.log(data);
-});
-
-
-con questa formula, mi segnala questo errore:
-Uncaught (in promise) SyntaxError: Unexpected token 'p', "parseSets("... is not valid JSON
-*/
-
-
-
 async function fetchData() {
     try {
-        const response = await fetch("https://ringsdb.com/api/public/packs/?jsonp=parseSets");
+        const response = await fetch("https://ringsdb.com/api/public/cards/?_format=json");
         const responseJson = await response.json();
-        const card = responseJson.data[0];
+        const card = responseJson[0];
 
-        const name = card.attributes.name;
-        const character = card.attributes.character;
+        const name = card.name;
+        const flavor = card.flavor;
+        const imagesrc = card.imagesrc;
 
-        const h2 = document.querySelector('my-title');
-        const h3 = document.querySelector('character-name');
-        const img = document.querySelector('img-character');
+        const h2 = document.querySelector('.character-name');
+        const h3 = document.querySelector('.my-title');
+        const img = document.querySelector('.img-character');
 
-        h2.innerText = name;
-        h3.innerText = character;
-        img.setAttribute("src", img-character);
-
-        console.log(responseJson);
-        console.log(card);
+        h2.innerHTML = name;
+        h3.innerHTML = flavor;
+        img.setAttribute("src", "https://ringsdb.com/" + imagesrc);
     } catch (error) {
-        console.error(error);
+        console.log(error);
     }
 }
-
-/* pur avendo seguito il video alla lettera, per ogni elemento che scrivo ispezionando il file sul live server, mi compare questo errore:
-SyntaxError: Unexpected token 'p', "parseSets("... is not valid JSON */
-
+  
 fetchData();
