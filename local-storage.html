@@ -42,25 +42,17 @@
             const firstnameInput = document.querySelector('.firstname');
             const printedForm = document.querySelector('.printedform');
             const titleName = document.querySelector('.title-name');
-            const savedData = JSON.parse(localStorage.getItem('formData'));
-            if (savedData) {
-                firstnameInput.value = savedData.firstname;
-                printedForm.textContent = `Email: ${savedData.email}, Name: ${savedData.firstname}, Surname: ${savedData.lastname}`;
-                titleName.textContent = savedData.firstname;
-            }
             const saveButton = document.querySelector('.btn');
             saveButton.addEventListener('click', function() {
                 const email = document.querySelector('.email').value;
                 const firstname = firstnameInput.value;
                 const lastname = document.querySelector('.lastname').value;
-                const formData = {
-                    email: email,
-                    firstname: firstname,
-                    lastname: lastname
-                };
-                localStorage.setItem('formData', JSON.stringify(formData));
 
-                titleName.textContent = firstname;
+                localStorage.setItem("email", email);
+                localStorage.setItem("firstname", firstname);
+                localStorage.setItem("lastname", lastname);
+
+                titleName.innerText = firstname;
 
                 printedForm.textContent = `Email: ${email}, Name: ${firstname}, Surname: ${lastname}`;
             });
@@ -69,3 +61,5 @@
 </body>
 
 </html>
+
+<!-- le classi sono gia scritte nella comanda dell'esercizio -->
