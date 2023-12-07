@@ -1,24 +1,28 @@
-function caricamentoDati() {
-    return new Promise((resolve) => {
+const users = [
+    { id: 1, name: "Mario", lastname: "Rossi", username: "marossi", password: "s3cr3t"},
+    { id: 2, name: "Sabrina", lastname: "Moccia", username: "sabmoccia", password: "priv4t3"},
+];
+
+function caricamentoDati(username, password) {
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
-        /* const person = { name: "John", age: 30 };*/
-        resolve("Questi sono i dati ottenuti dalla fonte asincrona.", /* person */);
-    }, 2000);
-  });
+            const user = users.find((user) => user.username === username && user.password === password);
+            if (user) {
+                resolve(user);
+            } else {
+                reject(`User with ID ${id} is lonely :/`)
+            }
+        }, 2000);
+    });
 }
 
 async function ottieniDati() {
     try {
-        const /* [message, person] */  dati = await caricamentoDati();
-       /* console.log(message);
-        console.log(`User:`, person); */
-        console.log(`Dati ottenuti:`, dati);
+        const data = await caricamentoDati("marossi", "s3cr3t");  /* devo inserire i dati di users, altrimenti mi segna errore nella console */
+        console.log("Dati ottenuti:", data);
     } catch (error) {
         console.log(error);
     };
 }
 
-
-ottineniDati();
-
-/* le parti commentate sono le prove che ho fatto, ma in ogni caso, non mi compare nulla in console. */
+ottieniDati();
